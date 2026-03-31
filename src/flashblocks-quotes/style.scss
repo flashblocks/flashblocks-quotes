@@ -1,0 +1,118 @@
+/**
+ * Flashblocks Quote block — frontend + editor styles.
+ *
+ * Three style variations: default, card, minimal.
+ * All colour choices meet WCAG AA contrast (4.5 : 1 for body text).
+ * Rem units ensure text respects user browser font-size preferences.
+ */
+
+// ─── Base ────────────────────────────────────────────────────────────────────
+
+.wp-block-flashblocks-flashblocks-quotes {
+	container-type: inline-size;
+	margin-block: 1.5rem;
+
+	// Reset browser blockquote margin so we control all spacing.
+	blockquote {
+		margin: 0;
+	}
+
+	// Quote body text.
+	&__body {
+		font-size: 1.125rem; // ~18 px — stays readable at smaller viewport sizes.
+		line-height: 1.6;
+		color: inherit;
+
+		// Soft visual indicator for the quoted content — uses border, not colour alone.
+		border-inline-start: 4px solid currentColor;
+		padding-inline-start: 1rem;
+		padding-block: 0.25rem;
+
+		p:last-child {
+			margin-block-end: 0;
+		}
+	}
+
+	// Attribution row beneath the quote.
+	&__attribution {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-block-start: 1rem;
+		font-style: normal; // Override browser <figcaption> italics.
+	}
+
+	// Author photo (thumbnail size, cropped to a circle).
+	&__photo-wrap {
+		flex-shrink: 0;
+	}
+
+	&__author-photo {
+		display: block;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	// <cite> holds name + role stacked vertically.
+	&__cite {
+		display: flex;
+		flex-direction: column;
+		gap: 0.125rem;
+		font-style: normal;
+	}
+
+	&__author-name {
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	&__author-role {
+		font-size: 0.875rem;
+		opacity: 0.75; // Softer without losing readable contrast on light/dark bg.
+	}
+}
+
+// ─── is-style-card ───────────────────────────────────────────────────────────
+//
+// Wraps the quote in a bordered card with a subtle shadow.
+
+.wp-block-flashblocks-flashblocks-quotes.is-style-card {
+	border: 1px solid rgba( 0, 0, 0, 0.12 );
+	border-radius: 0.5rem;
+	padding: 1.5rem;
+	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.08 );
+
+	// Remove the left border on the body — the card container provides context.
+	.wp-block-flashblocks-flashblocks-quotes__body {
+		border-inline-start: none;
+		padding-inline-start: 0;
+	}
+}
+
+// ─── is-style-minimal ────────────────────────────────────────────────────────
+//
+// Clean, no borders — relies on typographic weight to signal the quote.
+
+.wp-block-flashblocks-flashblocks-quotes.is-style-minimal {
+	.wp-block-flashblocks-flashblocks-quotes__body {
+		border-inline-start: none;
+		padding-inline-start: 0;
+		font-size: 1.25rem;
+		font-style: italic;
+	}
+
+	.wp-block-flashblocks-flashblocks-quotes__author-name {
+		font-weight: 700;
+	}
+}
+
+// ─── Reduced-motion ──────────────────────────────────────────────────────────
+
+@media ( prefers-reduced-motion: reduce ) {
+	.wp-block-flashblocks-flashblocks-quotes {
+		// Nothing animated yet; placeholder for future transitions.
+		transition: none;
+	}
+}
