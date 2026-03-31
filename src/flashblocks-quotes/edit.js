@@ -21,8 +21,6 @@ import {
 } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
-import './editor.scss';
-
 export default function Edit( { attributes, setAttributes, context } ) {
 	const { selectedPostId } = attributes;
 
