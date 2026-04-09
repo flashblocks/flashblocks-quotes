@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Flashblocks Quotes
  * Description:       A quotes system with a custom post type, author meta, block styles, and Query Loop support.
@@ -13,11 +14,11 @@
  * @package FlashblocksQuotes
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
-define( 'FLASHBLOCKS_QUOTE_VERSION', '0.1.0' );
+define('FLASHBLOCKS_QUOTE_VERSION', '0.1.0');
 
 require_once __DIR__ . '/includes/cpt.php';
 require_once __DIR__ . '/includes/meta.php';
@@ -28,6 +29,6 @@ require_once __DIR__ . '/includes/meta.php';
  * @see https://make.wordpress.org/core/2025/03/13/more-efficient-block-type-registration-in-6-8/
  */
 function flashblocks_quotes_block_init() {
-	wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
+	wp_register_block_types_from_metadata_collection(__DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php');
 }
-add_action( 'init', 'flashblocks_quotes_block_init' );
+add_action('init', 'flashblocks_quotes_block_init');
