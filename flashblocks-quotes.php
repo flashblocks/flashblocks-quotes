@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Flashblocks Quotes
  * Description:       A quotes system with a custom post type, author meta, block styles, and Query Loop support.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
  * Author:            Fleenor Security
