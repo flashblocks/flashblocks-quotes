@@ -224,32 +224,31 @@ export default function Edit( { attributes, setAttributes, context } ) {
 			{ sidebarControls }
 			<figure { ...blockProps }>
 				<blockquote
-					className="wp-block-flashblocks-quote__body"
 					// eslint-disable-next-line react/no-danger
 					dangerouslySetInnerHTML={ { __html: content } }
 				/>
 				{ hasAttribution && (
-					<figcaption className="wp-block-flashblocks-quote__attribution">
+					<figcaption>
 						{ photoUrl && (
 							<div
-								className="wp-block-flashblocks-quote__photo-wrap"
+								className="photo-wrap"
 								aria-hidden="true"
 							>
 								<img
-									className="wp-block-flashblocks-quote__author-photo"
+									className="author-photo"
 									src={ photoUrl }
 									alt={ authorName || '' }
 								/>
 							</div>
 						) }
-						<cite className="wp-block-flashblocks-quote__cite">
+						<cite>
 							{ authorName && (
-								<span className="wp-block-flashblocks-quote__author-name">
+								<span className="author-name">
 									{ authorName }
 								</span>
 							) }
 							{ authorRole && (
-								<span className="wp-block-flashblocks-quote__author-role">
+								<span className="author-role">
 									{ authorRole }
 								</span>
 							) }

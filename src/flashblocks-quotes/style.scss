@@ -18,7 +18,7 @@
 	}
 
 	// Quote body text.
-	&__body {
+	blockquote {
 		font-size: 1.125rem; // ~18 px — stays readable at smaller viewport sizes.
 		line-height: 1.6;
 		color: inherit;
@@ -34,7 +34,7 @@
 	}
 
 	// Attribution row beneath the quote.
-	&__attribution {
+	figcaption {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
@@ -43,11 +43,11 @@
 	}
 
 	// Author photo (thumbnail size, cropped to a circle).
-	&__photo-wrap {
+	.photo-wrap {
 		flex-shrink: 0;
 	}
 
-	&__author-photo {
+	.author-photo {
 		display: block;
 		width: 3rem;
 		height: 3rem;
@@ -56,19 +56,19 @@
 	}
 
 	// <cite> holds name + role stacked vertically.
-	&__cite {
+	cite {
 		display: flex;
 		flex-direction: column;
 		gap: 0.125rem;
 		font-style: normal;
 	}
 
-	&__author-name {
+	.author-name {
 		font-weight: 600;
 		line-height: 1.3;
 	}
 
-	&__author-role {
+	.author-role {
 		font-size: 0.875rem;
 		opacity: 0.75; // Softer without losing readable contrast on light/dark bg.
 	}
@@ -85,7 +85,7 @@
 	box-shadow: 0 2px 6px rgba( 0, 0, 0, 0.08 );
 
 	// Remove the left border on the body — the card container provides context.
-	.wp-block-flashblocks-quote__body {
+	blockquote {
 		border-inline-start: none;
 		padding-inline-start: 0;
 	}
@@ -96,14 +96,14 @@
 // Clean, no borders — relies on typographic weight to signal the quote.
 
 .wp-block-flashblocks-quote.is-style-minimal {
-	.wp-block-flashblocks-quote__body {
+	blockquote {
 		border-inline-start: none;
 		padding-inline-start: 0;
 		font-size: 1.25rem;
 		font-style: italic;
 	}
 
-	.wp-block-flashblocks-quote__author-name {
+	.author-name {
 		font-weight: 700;
 	}
 }
